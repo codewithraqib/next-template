@@ -1,0 +1,117 @@
+.manage_account {
+    margin-bottom: 40px;
+
+    .profile {
+        .title {}
+
+        .logout_wrapper {
+            .logout {
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .user_profile {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            img {
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                margin: 20px;
+
+            }
+        }
+    }
+
+    .account_wrapper {
+        .account {
+            display: flex;
+
+            .tab_item {
+                border-bottom: 2px solid #ccc;
+                padding-bottom: 6px;
+                min-width: 180px;
+
+                &.active {
+                    border-bottom: 2px solid var(--primary-color);
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .account_child {
+            .account_item {
+                display: grid;
+                row-gap: 16px;
+                margin-top: 30px;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 50px;
+
+                .edit_container {
+                    display: flex;
+                    justify-content: space-between;
+                    background-color: var(--primary-color);
+                    padding: 10px 4px;
+                    color: white;
+
+                    .address_actions {
+                        min-width: 100px;
+                        display: flex;
+                        justify-content: flex-end;
+
+                        .edit {
+                            &:hover {
+                                cursor: pointer;
+                                text-decoration: underline;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .address_wrapper {
+
+            .edit_container {
+                display: flex;
+                justify-content: space-between;
+                background-color: var(--primary-color);
+                padding: 10px 4px;
+                color: white;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            .address_item {
+                display: flex;
+                justify-content: space-between;
+                margin: 20px 0px;
+                .address_actions{
+                    display: flex;
+                    gap: 20px;
+                    span:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+}
+
+.address_form {
+    .title {
+        margin-bottom: 30px;
+    }
+}
