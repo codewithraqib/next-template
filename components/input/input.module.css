@@ -1,0 +1,9 @@
+.aaa{
+   display: grid;
+   
+}
+.bbb{
+    box-shadow: 0px 0px 10px 2px; 
+    height: 30px;
+    width: 200px;  
+}

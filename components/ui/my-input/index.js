@@ -12,7 +12,7 @@ const MyInput = (props) => {
 
       <div className={classes.inner_input_wrapper} style={props.wrapperStyle}>
         {props.leftIcon ? (
-          <Image src={props.leftIcon} alt="left-icon" width={20} height={20} />
+          <Image src={props.leftIcon} alt="left-icon" width={20} height={20}  />
         ) : null}
 
         <input
@@ -30,7 +30,7 @@ const MyInput = (props) => {
         />
 
         {props.rightIcon ? (
-          <Image src={props.rightIcon} alt="left-icon" width={20} height={20} />
+          <Image src={props.rightIcon} alt="left-icon" width={20} height={20} onClick={props.onRightIconClick}  />
         ) : null}
       </div>
     </div>

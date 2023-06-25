@@ -1,0 +1,7 @@
+const cardes=()=>{
+    return{
+      
+
+   
+        
+    }}
