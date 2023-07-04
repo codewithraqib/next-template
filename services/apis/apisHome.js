@@ -3,6 +3,7 @@ import {
   BRANDS,
   CATEGORIES,
   CATEGORY_PRODUCTS,
+  EVENTS,
   LATEST_PRODUCTS,
   PRODUCTS_FROM_CATEGORY,
   WISHLIST,
@@ -16,3 +17,4 @@ export const ProductsOfCategory = (category_id) =>
 export const Categories = () => GetApi(CATEGORIES);
 export const Brands = () => GetApi(BRANDS);
 export const Banners = () => GetApi(BANNERS);
+export const GetEvents = () => GetApi(EVENTS)

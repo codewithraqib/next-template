@@ -12,6 +12,7 @@ import { loginDataState } from "../../recoil/atoms/common";
 import { useRecoilState } from "recoil";
 import { useRouter } from "next/router";
 import { useState } from "react";
+
 const Login = () => {
   let router = useRouter();
 
@@ -19,8 +20,9 @@ const Login = () => {
 
   const LoginFunc = LoginUser();
 
+  const [forgotEmail, setForgotEmail] = useState("")
   const [staySigned, setStaySigned] = useState(false);
-  const [forgotPassword, setForgotPassword] = useState(false);
+  const [forgotPassword, setForgotPassword] = useState(true);
   let forgot = null;
   const [inputsdata, setInputsdata] = useState({
     login: "",
@@ -30,6 +32,7 @@ const Login = () => {
   const getInput = (val, type) => {
     setInputsdata({ ...inputsdata, [type]: val });
   };
+
 
   useEffect(() => {
     if (loginData && loginData?.token) {
@@ -67,10 +70,12 @@ const Login = () => {
   const gotoRegister = () => {
     router.push('/register')
   }
+
+  
   return (
     <>
       <div className={classes.main_wrapper}>
-        <ResetMyAccountData />
+        {/* <ResetMyAccountData /> */}
         <div className={classes.left_side_and_arrow}>
           <div className={classes.arrow} onClick={() => router.back()}>
             <Image
@@ -114,39 +119,8 @@ const Login = () => {
             </div>
           </div>
         </div>
-
-        {forgotPassword ? (
-          <div className={classes.forgot_wrapper}>
-          <div className={classes.forgot_password}>
-            <div
-              onClick={() => setForgotPassword(!forgotPassword)}
-              className={classes.go_back}
-            >
-              <Image
-                src={"/images/general/left_arrow.png"}
-                width={40}
-                height={40}
-                alt=""
-              />
-            </div>
-            <MyInput
-              border={true}
-              label="Email or Mobile Number"
-              onChange={(val) => proceedForgot(val.target.value)}
-              value={forgot}
-              type="text"
-            />
-            <MyButton
-              label="Reset password"
-              onClick={proceedForgot}
-              style={{
-                borderRadius: "20px",
-                marginTop: "30px",
-              }}
-            />
-          </div>
-          </div>
-        ) : (
+    
+        {forgotPassword ? <ForgotComponent setForgotPassword={setForgotPassword} forgotPassword={forgotPassword} forgotEmail={forgotEmail} setForgotEmail={setForgotEmail} proceedForgot={proceedForgot} /> : (
           <div className={classes.login_side}>
             <MyInput
               border={true}
@@ -155,10 +129,9 @@ const Login = () => {
               onChange={(val) => getInput(val.target.value, "login")}
               value={inputsdata.login}
               type="text"
+              error={inputsdata?.loginError}
+
             />
-            <div className={classes.option_links}>
-              <span className="font10 bold">Login with an OTP</span>
-            </div>
             <MyInput
               border={true}
               label="Password"
@@ -166,10 +139,11 @@ const Login = () => {
               onChange={(val) => getInput(val.target.value, "password")}
               value={inputsdata.password}
               type="password"
+            // onRightIconClick={() => console.log("Hello")}
             />
             <div
               className={classes.option_links}
-              onClick={() => setForgotPassword(!forgotPassword)}
+              onClick={() => setForgotPassword(true)}
             >
               <span className="font10 bold">Forgot your password?</span>
             </div>
@@ -201,3 +175,41 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+const ForgotComponent = ({ setForgotPassword, forgotPassword, setForgotEmail, forgotEmail, proceedForgot }) => {
+
+  return (
+    <div className={classes.forgot_wrapper}>
+      <div className={classes.forgot_password}>
+        <div
+          onClick={() => setForgotPassword(!forgotPassword)}
+          className={classes.go_back}
+        >
+          <Image
+            src={"/images/general/left_arrow.png"}
+            width={40}
+            height={40}
+            alt=""
+          />
+        </div>
+        <MyInput
+          border={true}
+          label="Email or Mobile Number"
+          onChange={(val) => setForgotEmail(val.target.value)}
+          value={forgotEmail}
+          type="text"
+        />
+        <MyButton
+          label="Reset password"
+          onClick={proceedForgot}
+          style={{
+            borderRadius: "20px",
+            marginTop: "30px",
+          }}
+        />
+      </div>
+    </div>
+  )
+}

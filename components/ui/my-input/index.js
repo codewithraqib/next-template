@@ -3,6 +3,8 @@ import React from "react";
 import classes from "./my-input.module.less";
 
 const MyInput = (props) => {
+
+  console.log({props})
   return (
     <div
       className={classes.input_wrapper}
@@ -30,9 +32,12 @@ const MyInput = (props) => {
         />
 
         {props.rightIcon ? (
-          <Image src={props.rightIcon} alt="left-icon" width={20} height={20} />
+          <Image onClick={props.onRightIconClick} src={props.rightIcon} alt="left-icon" width={20} height={20} />
         ) : null}
       </div>
+
+
+      {props.error? <div className={classes.error}>{props.error}</div>: null}
     </div>
   );
 };

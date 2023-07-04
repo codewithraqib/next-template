@@ -1,7 +1,7 @@
 const baseUrls = {
-  baseUrlBus: "https://fakestoreapi.com",
+  baseUrlBus: "https://jsonplaceholder.typicode.com",
   baseUrAT: "https://newstg2-at.kupos.cl",
-  baseUrl: "https://skybiz.keef.org.in/api/v1",
+  baseUrl: "https://jsonplaceholder.typicode.com",
   mediaUrl: "https://skybizcdn.keef.org.in/",
   // baseUrlBus: "https://kupos.cl",
   // baseUrlMain: "https://kupos.cl",

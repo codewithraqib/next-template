@@ -51,16 +51,16 @@ const Header = () => {
         <div className={classes.main_wrapper_inner}>
           <div className={classes.logo_container} onClick={returnHome}>
             {/* <Image
-              src={"/images/icons/home/airport-icon.svg"}
+              src={"/images/iustlogo2.webp"}
               width={120}
               height={80}
               alt=""
               onClick={returnHome}
-            /> */}
-            SKYBIZ
+            />  */}
+            Computer club
           </div>
 
-          <div className={classes.search_bar}>
+          {/* <div className={classes.search_bar}>
             <SearchBar
               label="Search"
               placeholder="search products"
@@ -73,7 +73,7 @@ const Header = () => {
               sugesstions={true}
               searchHistory={search}
             />
-          </div>
+          </div> */}
 
           <div className={classes.cart_login}>
             <div
@@ -81,33 +81,36 @@ const Header = () => {
               className={classes.cart}
               onClick={gotoWishList}
             >
-              <Image
+              {/* <Image
                 src={"/images/icons/home/heart-filled.png"}
                 width={34}
                 height={34}
                 alt=""
-              />
+              /> */}
+              Events
             </div>
             <div
               style={{ display: "flex" }}
               className={classes.cart}
               onClick={gotoCartPage}
             >
-              <Image
+              {/* <Image
                 src={"/images/general/icons8-fast-cart-60.png"}
                 width={34}
                 height={34}
                 alt=""
-              />
+              /> */}
+              About
             </div>
 
             <div className={classes.login_register} onClick={loginPage}>
-              <Image
+              {/* <Image
                 src={"/images/icons/login-reg.png"}
                 width={34}
                 height={34}
                 alt=""
-              />
+              /> */}
+              Login
             </div>
           </div>
         </div>
