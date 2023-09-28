@@ -7,7 +7,6 @@ import common_en from "../public/locales/en/common.json";
 import common_es from "../public/locales/es/common.json";
 import i18next from "i18next";
 import store from "../redux/store";
-import KuposFooter from "../components/common/footer/kupos-footer";
 function MyApp({ Component, pageProps }) {
   if (typeof window !== "undefined")
     i18next.init({

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { cartListState, totalCartValueState } from "../../../recoil/atoms/cart";
 import { useRecoilState, useRecoilValue } from "recoil";
-
-import Cart from "../cart";
 import ContentContainer from "../content-container/content-container";
 import Image from "next/image";
-import LoginModal from "../../home/login-modal/login-modal";
-import SearchBar from "../search-bar";
 import classes from "./header.module.less";
 import { useRouter } from "next/router";
 
@@ -50,30 +46,9 @@ const Header = () => {
       <ContentContainer>
         <div className={classes.main_wrapper_inner}>
           <div className={classes.logo_container} onClick={returnHome}>
-            {/* <Image
-              src={"/images/icons/home/airport-icon.svg"}
-              width={120}
-              height={80}
-              alt=""
-              onClick={returnHome}
-            /> */}
-            SKYBIZ
+            Ecommerce
           </div>
 
-          <div className={classes.search_bar}>
-            <SearchBar
-              label="Search"
-              placeholder="search products"
-              onFocus={searchFunction}
-              onChange={(e) => setSearchOption(e)}
-              onChangeInput={(e) => setSearch(e.target.value)}
-              value={search}
-              options={options}
-              border={false}
-              sugesstions={true}
-              searchHistory={search}
-            />
-          </div>
 
           <div className={classes.cart_login}>
             <div
@@ -113,11 +88,6 @@ const Header = () => {
         </div>
       </ContentContainer>
       <div className={classes.login_modal}>
-        <LoginModal
-          showModal={showLoginModal}
-          onHide={() => setShowLoginModal(false)}
-          // t={t}
-        />
       </div>
     </div>
   );

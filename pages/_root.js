@@ -18,7 +18,6 @@ import KuposModalWithButtons from "../components/ui/kupos-modal-with-buttons";
 import KuposErrorSuccessModal from "../components/ui/kupos-error-success-modal/kupos-error-success-modal";
 import KuposModal from "../components/ui/kupos-modal/kupos-modal";
 import { Base64 } from "js-base64";
-import { RestoreAppDataFromOrToSession } from "../components/common/restore-app-data";
 
 export default function Root(props) {
   const getMastersApiFunc = Masters();
@@ -99,7 +98,6 @@ export default function Root(props) {
 
   return (
     <>
-      <RestoreAppDataFromOrToSession />
       {props.children}
       <KuposModalWithButtons
         size={kuposModalWithButtonsValue.size || "md"}

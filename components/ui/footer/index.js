@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-import ContentContainer from "../content-container/content-container";
 import Image from "next/image";
 import classes from "./footer.module.less";
 
